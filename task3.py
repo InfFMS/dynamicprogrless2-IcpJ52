@@ -21,3 +21,35 @@
 Ответ должен быть напечатан как одно число.
 """
 
+
+def f1(a, b):
+    if a == b:
+        return 1
+    if a < b:
+        return 0
+    if a == 22 or a == 7:
+        return 0
+    return f1(a // 3, b) + f1(a - 3, b)
+
+
+def f2(a, b):
+    if a == b:
+        return 1
+    if a < b:
+        return 0
+    if a == 7:
+        return 0
+    return f2(a // 3, b) + f2(a - 3, b)
+
+
+def f3(a, b):
+    if a == b:
+        return 1
+    if a < b:
+        return 0
+    if a == 22:
+        return 0
+    return f3(a // 3, b) + f3(a - 3, b)
+
+
+print(f1(68, 4) + f2(68, 22) * f2(22, 4) + f3(68, 7) * f3(7, 4))
