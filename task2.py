@@ -27,3 +27,22 @@
 Ответ должен быть напечатан как одно число.
 """
 
+
+def g(x):
+    if (x - 1) % 3 == 0:
+        return x - 1
+    if (x - 2) % 3 == 0:
+        return x - 2
+
+
+def f(a, b):
+    if a == b:
+        return 1
+    if a < b:
+        return 0
+    if a % 3 == 0:
+        return f(a - 5, b) + f(a // 3, b)
+    return f(a - 5, b) + f(g(a), b)
+
+
+print(f(103, 73) * f(73, 24))
