@@ -13,4 +13,19 @@ C. Умножить на 2 (num = num * 2)
 
 Ответ должен быть напечатан как одно число.
 """
+import sys
 
+sys.setrecursionlimit(10000)
+
+
+def f(a, b):
+    if a == b:
+        return 1
+    if a > b:
+        return 0
+    if a * 2 == b:
+        return f(a + 2, b) + f(a + 5, b)
+    return f(a + 2, b) + f(a + 5, b) + f(a * 2, b)
+
+
+print(f(8, 40))
