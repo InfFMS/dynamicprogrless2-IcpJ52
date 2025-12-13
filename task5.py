@@ -14,3 +14,17 @@
 
 sequence = [10, 22, 9, 33, 21, 50, 41, 60, 80, 3, 5, 7, 2, 8, 1]
 
+
+def f(lst):
+    if len(lst) == 1:
+        return 1
+    lst1 = [1] * len(lst)
+    for i in range(1, len(lst)):
+        for j in range(i):
+            if lst[i] > lst[j]:
+                if lst1[i] <= lst1[j]:
+                    lst1[i] = lst1[j] + 1
+    return max(lst1)
+
+
+print(f(sequence))

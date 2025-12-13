@@ -22,3 +22,25 @@
 Ответ должен быть напечатан как одно число.
 """
 
+
+def f1(a, b):
+    if a == b:
+        return 1
+    if a > b:
+        return 0
+    if a == 24:
+        return 0
+    return f1(a + 1, b) + f1(a + 2, b) + f1(a + 4, b) + f1(a + 8, b)
+
+
+def f2(a, b):
+    if a == b:
+        return 1
+    if a > b:
+        return 0
+    if a == 32:
+        return 0
+    return f2(a + 1, b) + f2(a + 2, b) + f2(a + 4, b) + f2(a + 8, b)
+
+
+print(f1(16, 32) * f1(32, 48) + f2(16, 24) * f2(24, 48))

@@ -8,4 +8,10 @@
 
 Ответ должен быть напечатан как одно число.
 """
-
+ans = 0
+for i in range(1342):
+    for j in range(1342):
+        a = i + 2 * j
+        if a <= 1341 and (1341 - a) % 5 == 0:
+            ans += 1
+print(ans)
